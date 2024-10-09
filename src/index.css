@@ -1,3 +1,9 @@
+body {
+  margin: 2%;
+  background-color: #181818;
+  color: white;
+}
+
 :root {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -10,4 +16,55 @@
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.album-card-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.album-card {
+  margin: 6% 6% 10% 6%;
+  grid-column: span 3;
+}
+
+.album-cover {
+  margin: 0;
+}
+
+.album-cover img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #a0a0a0;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+  /* Ändrar textfärgen till vit */
+  text-decoration-color: #ffffff;
+}
+
+h2 {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* for tablet */
+@media (min-width: 668px) and (max-width: 1024px) {
+  .album-card {
+    grid-column: span 6;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 667px) {
+  .album-card {
+    grid-column: span 12;
+  }
 }
