@@ -11,7 +11,6 @@ export const App = () => {
       <main className="album-card-container">
         {data.albums.items.map((albumcard) => (
           <AlbumCard key={albumcard.id} albumcard={albumcard} />
-
         ))}
       </main>
     </>

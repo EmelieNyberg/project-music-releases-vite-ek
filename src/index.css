@@ -18,6 +18,32 @@ code {
     monospace;
 }
 
+header {
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 150%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sign-in-btn {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 10px 20px;
+  margin: 40px 0;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sign-in-btn:hover {
+  background-color: white;
+  color: black;
+}
+
 .album-card-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -28,12 +54,37 @@ code {
   grid-column: span 3;
 }
 
+.album-cover-container {
+  position: relative;
+}
+
 .album-cover {
   margin: 0;
 }
 
 .album-cover img {
   width: 100%;
+}
+
+.album-cover-buttons {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  /* Placera knapparna horisontellt centrerat */
+  align-items: center;
+  /* Placera knapparna vertikalt centrerat */
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.album-cover-container:hover .album-cover-buttons {
+  opacity: 1;
+  /* Gör knapparna synliga vid hover */
 }
 
 a {
@@ -53,6 +104,34 @@ a:hover {
 h2 {
   font-size: 14px;
   color: #ffffff;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.1s ease, filter 0.1s ease;
+}
+
+button img {
+  width: 30%;
+  height: auto;
+  filter: grayscale(100%) brightness(0.5);
+  /* Gör ikonerna mörkare och grå vid hover över album */
+  transition: transform 0.1s ease, filter 0.1s ease;
+}
+
+button img[alt="Play button"] {
+  width: 80%;
+  height: auto;
+}
+
+button:hover img {
+  transform: scale(1.1);
+  /* Öka storleken något vid hover */
+  filter: none;
+  /* Ta bort mörkhet och gråskala vid hover */
 }
 
 /* for tablet */
