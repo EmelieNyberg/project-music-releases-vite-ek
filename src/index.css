@@ -20,26 +20,35 @@ code {
 
 header {
   font-family: "Madimi One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
   font-size: 150%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
-.sign-in-btn {
+.logo {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+header img {
+  width: 70px;
+  height: 70px;
+}
+
+.log-out-btn {
   background-color: transparent;
   border: 2px solid white;
   color: white;
   padding: 10px 20px;
   margin: 40px 0;
-  border-radius: 20px;
+  border-radius: 40px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.sign-in-btn:hover {
+.log-out-btn:hover {
   background-color: white;
   color: black;
 }
@@ -75,16 +84,15 @@ header {
   bottom: 0;
   display: flex;
   justify-content: space-around;
-  /* Placera knapparna horisontellt centrerat */
   align-items: center;
-  /* Placera knapparna vertikalt centrerat */
+  /* buttons not visible on album cover */
   opacity: 0;
   transition: opacity 0.2s ease;
 }
 
 .album-cover-container:hover .album-cover-buttons {
+  /* buttons visible on album cover if hovering */
   opacity: 1;
-  /* Gör knapparna synliga vid hover */
 }
 
 a {
@@ -97,7 +105,7 @@ a {
 a:hover {
   text-decoration: underline;
   color: #ffffff;
-  /* Ändrar textfärgen till vit */
+  /* Change text to white */
   text-decoration-color: #ffffff;
 }
 
@@ -118,7 +126,7 @@ button img {
   width: 30%;
   height: auto;
   filter: grayscale(100%) brightness(0.5);
-  /* Gör ikonerna mörkare och grå vid hover över album */
+  /* Make button darker when not hovering */
   transition: transform 0.1s ease, filter 0.1s ease;
 }
 
@@ -129,12 +137,12 @@ button img[alt="Play button"] {
 
 button:hover img {
   transform: scale(1.1);
-  /* Öka storleken något vid hover */
+  /* Bigger size if hovering */
   filter: none;
-  /* Ta bort mörkhet och gråskala vid hover */
+  /* Remove darker color if hovering */
 }
 
-/* for tablet */
+/* For tablet */
 @media (min-width: 668px) and (max-width: 1024px) {
   .album-card {
     grid-column: span 6;
@@ -145,5 +153,9 @@ button:hover img {
 @media (max-width: 667px) {
   .album-card {
     grid-column: span 12;
+  }
+
+  header {
+    font-size: 90%;
   }
 }
